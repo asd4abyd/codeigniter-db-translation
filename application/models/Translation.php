@@ -257,7 +257,7 @@ class translation extends CI_Model
 
         $result = $this->db->query("
             insert into {$table} (`key`, lang_id, text_value)  VALUES (?, ?, ?)
-            on duplicate key update `text_value`=values(`text_value`),  update_at=now()", [$key, $langID, $value]);
+            on duplicate key update `text_value`=values(`text_value`),  updated_at=now()", [$key, $langID, $value]);
 
         $this->db->db_debug = $debugStatus;
 
