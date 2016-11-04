@@ -193,8 +193,8 @@ class translation extends CI_Model
 
         if (isset($result[$langID])) {
             return $result[$langID];
-        } elseif (isset($result[BASE_LANGUAGE])) {
-            return $result[BASE_LANGUAGE];
+        } elseif (isset($result[$this->config->item('base_language')])) {
+            return $result[$this->config->item('base_language')];
         } elseif (count($result)>0) {
             ksort($result);
 
