@@ -171,7 +171,8 @@ class translation extends CI_Model
 
         $this->db->db_debug = $debugStatus;
 
-        if ($this->db->_error_number()==1146) {
+        $error = $this->db->error();
+        if ($error['code']==1146) {
             $value=explode('.', $key);
             $value=ucfirst(strtolower(str_replace('_', ' ', $value[1])));
 
@@ -261,7 +262,8 @@ class translation extends CI_Model
 
         $this->db->db_debug = $debugStatus;
 
-        if ($this->db->_error_number() == 1146) {
+        $error = $this->db->error();
+        if ($error['code']==1146) {
             $this->createTable($table);
 
             $this->db->set([

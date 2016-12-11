@@ -1,0 +1,4 @@
+application/cache/*
+!application/cache/.htaccess
+.idea
+application/.DS_Store
